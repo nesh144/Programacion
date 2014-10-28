@@ -1,0 +1,28 @@
+// Salario Neto Funcion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+
+float calcular_salarioN(float salario, float afp, float iva);
+void main()
+
+{
+	float salarioN, salariob, afp, iva;
+	cout<<"Ingrese Salario Bruto: ";
+	cin>>salariob;
+	afp=0.12;
+	iva=0.13;
+	salarioN=calcular_salarioN(salariob, afp, iva);
+	cout<<"El salario neto es: "<<salarioN;
+	getch();
+}
+float calcular_salarioN(float salario, float afp, float iva)
+{
+	float salarioN;
+	salarioN= salario-((afp+iva)*salario);
+	return salarioN;
+}
+
